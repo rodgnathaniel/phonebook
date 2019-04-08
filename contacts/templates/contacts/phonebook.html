@@ -27,9 +27,9 @@
                     <button class="close_newcontact_modal" id="close_newcontact_modal">+</button>
                     <span>New Contact</span>
 
-                    <input placeholder="Name" type="text"></input>
-                    <input placeholder="Phone" type="number"></input>
-                    <input placeholder="E-mail" type="email"></input>
+                    <input id="new_name" placeholder="Name" type="text"></input>
+                    <input id="new_phone" placeholder="Phone" type="number"></input>
+                    <input id="new_email" placeholder="E-mail" type="email"></input>
                     <input placeholder="Birthday" type="date"></input>
                     <input placeholder="Website" type="url"></input>
                     <button id="save_contact">Save</button>
@@ -38,6 +38,24 @@
              
 
             <script>
+                let new_name = document.querySelector('#new_name')
+                let new_phone = document.querySelector('#new_phone')
+                let new_email = document.querySelector('#new_email')
+            
+                function save() {        
+                    axios.post("{% url 'contacts:save_contact' %}",
+                            {
+                                new_name: new_name,
+                                new_phone: new_phone,
+                                new_email: new_email,
+                            }, {
+                                headers: {
+                                    "X-CSRFToken": "{{ csrf_token }}"
+                                }
+                            }
+                        ).then(function(response) {
+                        })
+                }
                 new_contact = document.querySelector('#new_contact')
                 close_newcontact = document.querySelector('#close_newcontact_modal')
 
@@ -49,8 +67,7 @@
                 // };
                 // name.onmouseout = function() {
                 //     close_1()
-                // }
-
+\
                 // dev.onmouseover = function() {
                 //     pentagon.py += 30
                 //     pentagon.vy = 11
