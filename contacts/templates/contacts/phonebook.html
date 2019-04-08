@@ -1,32 +1,29 @@
 
-<!-- simulizi -->
 {% load static %}
 <html>
     <head>
 
-        <link rel="stylesheet" type="text/css" href="{% static 'home/css/main.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'contacts/css/main.css' %}">
 
     </head>
+        <header>
+            <h1>Simulizi</h1>
+                <nav>
+                    <button id="new_contact">New Contact</button>
+                </nav>
+        </header>
+
 
         <main>
+     
 
-            <div id="left">
-                <h1 id="name">Nathaniel Thomas Rodgers</h1>
-                <h2 id="dev">Web Development</h2>
-               
-            </div>
-
-            <div id="middle">
-                <!-- <canvas id="cnv" class="cnv" width="26" height="200"></canvas> -->
-            </div>
-            <div id="right">
-
-            </div>
 
         </main>
 
                 <div class="newcontact_modal">
-                    <button class="close_newcontact_modal" id="close_newcontact_modal" style="display:none"></button>
+                    <button class="close_newcontact_modal" id="close_newcontact_modal">+</button>
+                    <span>New Contact</span>
+
                     <input placeholder="Name" type="text"></input>
                     <input placeholder="Phone" type="number"></input>
                     <input placeholder="E-mail" type="email"></input>
@@ -35,81 +32,11 @@
                     <button id="save_contact">Save</button>
 
                 </div>
-
-                <!-- <div class="modal_2">  
-                    <span id="span_2">Portfolio</span>
-                    <button class="close" id="close_2" style="display:none"></button>
-                </div>
-
-                <div id="modal_3" class="modal_3">
-                    <button class="close" id="close_3" style="display:none"></button>
-                    <a id="Django" href="http://nathanielthomas.pythonanywhere.com/" target="_blank">Django</a>
-                    <a id="JavaScript" href="https://github.com/rodgnathaniel/JavaScript" target="_blank">JavaScript</a>
-                    <a id="Python" href="https://github.com/rodgnathaniel/Python" target="_blank">Python</a>
-                    <a id="HTML/CSS" href="https://github.com/rodgnathaniel/HTML-CSS" target="_blank">HTML/CSS</a>
-                </div>
-
-
-                <img id="pentagon_img" src="{% static 'home/pentagon-orange.png' %}" style="display:none"/> -->
-
              
 
             <script>
-                // let cnv = document.querySelector('#cnv');
-                // cnv.backgroundColor = 'red';
-                // let width = cnv.width
-                // let height = cnv.height
-                // let ctx = cnv.getContext('2d');
+                close_newcontact = document.querySelector('#close_newcontact_modal')
 
-                // var pentagon_img = document.querySelector("#pentagon_img");
-
-
-                // let span_2 = document.querySelector('#span_2')
-                // let modal_3 = document.querySelector('#modal_3')
-
-                // let name = document.querySelector('#name');
-                // let dev = document.querySelector('#dev');
-
-                // let bottom_contact = false
-                // let top_contact = false
-
-                // let pentagon = {
-                //     px:0,
-                //     py: 138,
-                //     vx:0,
-                //     vy:0,
-                //     height: 25,
-                //     width: 25
-                // }
-                // let cnv_top = {
-                //     px:0,
-                //     py: 5,
-                //     height: 5,
-                //     width: 25
-                // }
-                // let line = {
-                //     px: 11,
-                //     py: 0,
-                //     height: 200,
-                //     width: 3
-                // }
-    
-
-                // let cnv_bottom = {
-                //     px:0,
-                //     py: 189,
-                //     height: 5,
-                //     width: 25
-                // }
-
-
-                // name.onclick = function() {
-                //     pentagon.py = 138
-                //     pentagon.vy = 0  
-                //     close_1()
-                //     close_2() 
-                //     close_3()
-                // };
 
                 // name.onmouseover = function() {
                 //     pentagon.py -= 30
@@ -127,125 +54,16 @@
                 // dev.onmouseout = function() {
                 //     close_2()
                 // }
-              
-                function newcontact_modal() {
-         
-                    document.querySelector(".newcontact_modal").style.display = "flex";  
-                }
-                function close_newcontact_modal() {
+                close_newcontact.onclick = function(){
                     document.querySelector(".newcontact_modal").style.display = "none";  
                 }
-
-                // span_2.onmouseover = function() { 
-                //     modal_3_open()
-                // };
-
-                // var modal_3_open = function() {
-                //     document.querySelector(".modal_3").style.display = "flex";  
-                // }
-                // function close_3() {
-                //     document.querySelector(".modal_3").style.display = "none";  
-                // }
-
-
-                // var modal_2_open = function() {
-                //     document.querySelector(".modal_2").style.display = "flex";  
-                // }
-                // function close_2() {
-                //     document.querySelector(".modal_2").style.display = "none";  
-                // }
-
-                
-                //    //function for drawing objects on canvas
-                // function draw() {
-                //     // clear canvas each time function is called
-                //     ctx.clearRect(0, 0, cnv.width, cnv.height)
-
-                //     ctx.fillStyle = 'rgb(255,255,0,0.8)';
-                //     ctx.fillRect(line.px, line.py, line.width, line.height);
-
-                //     ctx.drawImage(pentagon_img, pentagon.px, pentagon.py, pentagon.width, pentagon.height);
-
-                //     let objects = [cnv_top, cnv_bottom]
-                //     let debug = false
-                //     if (debug) {
-                //         for (let i=0; i<objects.length; ++i) {
-                //             ctx.fillStyle = 'rgba(188,143,143,0.7)';
-                //             ctx.fillRect(objects[i].px, objects[i].py, objects[i].width, objects[i].height);
-                //         }
-                //     }
-
-
-
-
-                // }
-
-                // draw()
-                // window.requestAnimationFrame(main_loop);
-
-
-
-                //animation function
-                // function main_loop() {
-                //     if (pentagon.py > 190) {
-                //         pentagon.py = 170
-                //     } else if (pentagon.py < 5) {
-                //         pentagon.py = 5
-                //     }
-                //     if (check_collision(pentagon, cnv_top)) {
-                //         pentagon.vy = 0
-                //         close_2()
-
-                //         bottom_contact = false
-                  
-                //         modalOpen()
-
-                //     } else if (check_collision(pentagon, cnv_bottom)) {
-                //         pentagon.vy = 0
-                //         close_1()
-                //         modal_2_open()
-                //         bottom_contact = true
-
-                //     } else {
-                //         close_1()
-                //         close_2()
-                //         // close_3.onclick()
-                //     }
                     
+                function newcontact_modal() {
+                    document.querySelector(".newcontact_modal").style.display = "flex";  
+                }
 
-                
+    
 
-
-                //     pentagon.px += pentagon.vx
-                //     pentagon.py += pentagon.vy
-
-                //                     //keyboard commands
-                //     document.body.onkeydown = function(e) {
-                //         if (e.keyCode == 32 || e.keyCode == 38 || e.keyCode == 87) {
-                //             pentagon.py -= 35
-                //             pentagon.vy = -11
-                //             close_3()
-      
-                //         }
-                //         if (e.keyCode == 40 || e.keyCode == 83) {
-                //             pentagon.py += 35
-                //             pentagon.vy = 11
-                //         }
-                //         if (e.keyCode == 39 || e.keyCode == 68) {
-                //             if (bottom_contact) {
-                //                 modal_3_open()
-                //             }
-                //         }
-                //         if (e.keyCode == 37 || e.keyCode == 65) {
-                //             if (bottom_contact) {
-                //                 close_3()
-                //             }
-                //         }
-                //     } 
-
-
-                // draw()
-                // window.requestAnimationFrame(main_loop);
 
                 
 
@@ -257,7 +75,7 @@
                     return overlapArea != 0
 
                 }
-                }
+                
    
                                         
             </script>
