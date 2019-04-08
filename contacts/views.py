@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+from django.http import HttpResponse, JsonResponse
+
+# from .models import Game, Mode, State
+
+import json
+
+def home_view(request):
+
+    return render(request, "contacts/phonebook.html", {})
