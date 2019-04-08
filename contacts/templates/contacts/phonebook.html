@@ -8,10 +8,13 @@
     </head>
         <header>
             <h1>Simulizi</h1>
-                <nav>
+            <nav>
+                    <button id="view_contacts">View Contacts</button>
+                    <button id="messages">Messages</button>
                     <button id="new_contact">New Contact</button>
-                </nav>
+            </nav>
         </header>
+  
 
 
         <main>
@@ -35,6 +38,7 @@
              
 
             <script>
+                new_contact = document.querySelector('#new_contact')
                 close_newcontact = document.querySelector('#close_newcontact_modal')
 
 
@@ -54,6 +58,10 @@
                 // dev.onmouseout = function() {
                 //     close_2()
                 // }
+
+                new_contact.onclick = function(){
+                    document.querySelector(".newcontact_modal").style.display = "flex";  
+                }
                 close_newcontact.onclick = function(){
                     document.querySelector(".newcontact_modal").style.display = "none";  
                 }
