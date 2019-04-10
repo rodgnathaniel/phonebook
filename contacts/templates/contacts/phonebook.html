@@ -2,6 +2,7 @@
 {% load static %}
 <html>
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" type="text/javascript"></script>
 
         <link rel="stylesheet" type="text/css" href="{% static 'contacts/css/main.css' %}">
 
@@ -9,22 +10,25 @@
         <header>
             <h1>Simulizi</h1>
             <nav>
-                    <button id="view_contacts">View Contacts</button>
+                    <button id="view_contacts">Contacts</button>
                     <button id="messages">Messages</button>
-                    <button id="new_contact">New Contact</button>
+                    <button id="new_contact">Add Contact</button>
             </nav>
         </header>
   
 
 
         <main>
+            <div class="contacts_display">
+
+            </div>
      
 
 
         </main>
 
                 <div class="newcontact_modal">
-                    <button class="close_newcontact_modal" id="close_newcontact_modal">+</button>
+                    <button class="close_modal" id="close_newcontact_modal">+</button>
                     <span>New Contact</span>
 
                     <input id="new_name" placeholder="Name" type="text"></input>
@@ -32,7 +36,7 @@
                     <input id="new_email" placeholder="E-mail" type="email"></input>
                     <input placeholder="Birthday" type="date"></input>
                     <input placeholder="Website" type="url"></input>
-                    <button id="save_contact">Save</button>
+                    <button id="save_contact_btn">Save</button>
 
                 </div>
              
@@ -42,8 +46,8 @@
                 let new_phone = document.querySelector('#new_phone')
                 let new_email = document.querySelector('#new_email')
             
-                function save() {        
-                    axios.post("{% url 'contacts:save_contact' %}",
+                save_contact_btn.onclick = function() {        
+                    axios.post("{% url 'home:save_contact' %}",
                             {
                                 new_name: new_name,
                                 new_phone: new_phone,
@@ -58,6 +62,7 @@
                 }
                 new_contact = document.querySelector('#new_contact')
                 close_newcontact = document.querySelector('#close_newcontact_modal')
+                save_contact_btn = document.querySelector('#save_contact_btn')
 
 
                 // name.onmouseover = function() {
@@ -67,7 +72,7 @@
                 // };
                 // name.onmouseout = function() {
                 //     close_1()
-\
+
                 // dev.onmouseover = function() {
                 //     pentagon.py += 30
                 //     pentagon.vy = 11

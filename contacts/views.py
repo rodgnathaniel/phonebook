@@ -14,7 +14,7 @@ def home_view(request):
 
     return render(request, "contacts/phonebook.html", {})
 
-def save_state(request):
+def save_contact(request):
     
     data = json.loads(request.body)
     new_name = data['new_name']
