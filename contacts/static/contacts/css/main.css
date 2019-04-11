@@ -37,6 +37,20 @@ nav button{
     cursor:pointer;
    
 }
+#save_contact_btn{
+    width: 25%;
+    height: 20%;
+    justify-content: center;
+    /* margin-left: 1%;
+    margin-right: 1%; */
+    border-radius: 45% 45% 45% 45%;
+    background-color: rgba(	95,158,160,.7);
+    /* border: none; */
+    outline: none;
+    font-family: 'Dokdo', cursive;
+    font-size: 110%;
+    cursor:pointer;
+}
 
 .newcontact_modal {
     width: 300px;
