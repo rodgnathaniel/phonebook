@@ -22,6 +22,6 @@ def save_contact(request):
     new_email = data['new_email']
 
                 
-    state = State(new_name=newname, new_phone=new_phone, new_email=new_email)
+    state = State(new_name=new_name, new_phone=new_phone, new_email=new_email)
     state.save()
     return HttpResponse('hi')
