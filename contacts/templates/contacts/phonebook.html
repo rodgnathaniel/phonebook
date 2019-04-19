@@ -27,21 +27,25 @@
 
         </main>
 
-                <div class="newcontact_modal">
-                    <button class="close_modal" id="close_newcontact_modal">+</button>
-                    <span>New Contact</span>
+            <div class="newcontact_modal">
 
-                    <input id="new_name" placeholder="Name" type="text"></input>
-                    <input id="new_phone" placeholder="Phone" type="number"></input>
-                    <input id="new_email" placeholder="E-mail" type="email"></input>
-                    <input placeholder="Birthday" type="date"></input>
-                    <input placeholder="Website" type="url"></input>
-                    <button id="save_contact_btn">Save</button>
+                <button class="close_modal" id="close_newcontact_modal">+</button>
 
-                </div>
+                <span>New Contact</span>
+
+                <input id="new_name" placeholder="Name" type="text"></input>
+                <input id="new_phone" placeholder="Phone" type="number"></input>
+                <input id="new_email" placeholder="E-mail" type="email"></input>
+                <input placeholder="Birthday" type="date"></input>
+                <input placeholder="Website" type="url"></input>
+
+                <button id="save_contact_btn">Save</button>
+
+            </div>
              
 
             <script>
+
                 let new_name = document.querySelector('#new_name')
                 let new_phone = document.querySelector('#new_phone')
                 let new_email = document.querySelector('#new_email')
@@ -60,26 +64,10 @@
                         ).then(function(response) {
                         })
                 }
+
                 new_contact = document.querySelector('#new_contact')
                 close_newcontact = document.querySelector('#close_newcontact_modal')
                 save_contact_btn = document.querySelector('#save_contact_btn')
-
-
-                // name.onmouseover = function() {
-                //     pentagon.py -= 30
-                //     pentagon.vy = -11   
-                //     close_3()
-                // };
-                // name.onmouseout = function() {
-                //     close_1()
-
-                // dev.onmouseover = function() {
-                //     pentagon.py += 30
-                //     pentagon.vy = 11
-                // };
-                // dev.onmouseout = function() {
-                //     close_2()
-                // }
 
                 new_contact.onclick = function(){
                     document.querySelector(".newcontact_modal").style.display = "flex";  
@@ -91,23 +79,7 @@
                 function newcontact_modal() {
                     document.querySelector(".newcontact_modal").style.display = "flex";  
                 }
-
-    
-
-
-                
-
-                // function for calculating the overlap between two rectangles
-                function check_collision(rect1, rect2) {
-                    let x_overlap = Math.max(0, Math.min(rect1.px + rect1.width, rect2.px + rect2.width) - Math.max(rect1.px, rect2.px))
-                    let y_overlap = Math.max(0, Math.min(rect1.py + rect1.height, rect2.py + rect2.height) - Math.max(rect1.py, rect2.py))
-                    let overlapArea = x_overlap * y_overlap
-                    return overlapArea != 0
-
-                }
-                
-   
-                                        
+                                           
             </script>
 
         </body>
