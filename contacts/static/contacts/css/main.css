@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Dokdo');
+
 body{
     background-color: lavender;
 }
+
 h1{
     font-family: 'Dokdo', cursive;
     font-size: 300%;
@@ -17,11 +19,13 @@ header{
     margin-left: 10%;
     margin-bottom: 2%;
 }
+
 nav{
     display: flex;
     flex-direction: row;
     margin-left: 17%;
 }
+
 nav button{  
     width: 25%;
     height: 20%;
@@ -67,6 +71,7 @@ nav button{
     flex-direction: column;
     box-shadow: 0 0 10px 0 rgba(211,211,211,.7);
 }
+
 .newcontact_modal span{
     color: black;
     /* padding-top: 2%;
@@ -79,6 +84,7 @@ nav button{
     text-align: center;
     /* display: block; */
 }
+
 .newcontact_modal input{
     color: black;
     /* padding-top: 0%;
@@ -92,6 +98,7 @@ nav button{
     /* display: block; */
     margin-left: 15%;
 }
+
 .newcontact_modal button{
 
     height: 20%;
@@ -104,7 +111,6 @@ nav button{
 .newcontact_modal input:hover {
     background-color:rgba(205,92,92,.1);
 }
-
 
 .close_modal {
     position: absolute;
@@ -119,6 +125,7 @@ nav button{
     overflow: hidden;  
     outline: none;
 }
+
 .contacts_display {
     background-color: rgba(255,255,240,0.7);
     border-radius: 15px 15px 15px 15px;
